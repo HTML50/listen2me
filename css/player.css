@@ -9,42 +9,20 @@
 	margin:0;
 	padding:0;
 	}
-
 	
-	#waitingBar{
-	width:100%;
-	height:100%;
-	background:#000;
-	position:fixed;
-	z-index:999;
-	}
-	
-	#waitFont{
-	text-align:center;
-	font-size:150%;
-	margin: 0 auto;
-	margin-top:50px;
-	width:100px;
-	color:#ccc;
-	
-	font-family:"Courier New","Verdana","Terminal";
-	}
-	#waitProcess{
-	text-align:center;
-	margin: 0 auto;
-	width:100px;
-	height:50%;
-	}
 	
 	#title{
-	font-family:"MS Mincho","Batang","Dotum";
-	font-size:2em;
+	font-size:150%;
+	font-weight:bold;
 	margin: 0 auto;
-	line-height:2em;
-	width:70%;
+	line-height:5%;
 	text-align:center;
-	margin-bottom:-2em;
-	padding-top
+	}
+			
+	#author {
+	font-size:80%;
+	line-height:5%;
+	text-align:center;
 	}
 	
 	#wordsTable{
@@ -52,35 +30,29 @@
 	font-size:2em;
 	margin: 0 auto;
 	line-height:2em;
-	width:70%;
-
+	width: 70%;
+	position:absolute;
+	white-space: pre-wrap; 
+	word-wrap: break-word;
+	padding:10px 15% 0 15% ;
+	background: rgba(255,251, 254, 0.8);
+	z-index:2;
 	}
 	
-	#bottom {
-    text-align: center;
-}
 
-	#bottom a{
-    font-size: 1em;
-    line-height: 4em;
-    color: #000;
-	}
-	
 	#backGround {
 	width:100%;
 	height:100%;
+	top:0;
 	position:fixed;
-	background: #fff url("../img/bg.jpg") no-repeat fixed top;	 
+	background: url("../img/bg.jpg") no-repeat fixed top;	 
 	z-index:1;
-	display:none;
 	}
 	
 	pre { 
-		display: block;
-		background:rgba(255, 255, 255, 0.8);
-	background: -webkit-linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.6));
-	
-	white-space: pre-wrap; /*css-3*/ 
+	z-index:3;
+	background:rgba(255, 255, 255, 0.8);
+	/*css-3*/ 
 	white-space: -moz-pre-wrap; /*Mozilla,since1999*/ 
 	white-space: -pre-wrap; /*Opera4-6*/ 
 	white-space: -o-pre-wrap; /*Opera7*/ 
