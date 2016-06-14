@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/write.css" />
+	<link rel="stylesheet" type="text/css" href="css/spin.css" />
+	<script type="text/javascript" src="js/jquery.min.js" ></script>
+	<script src='js/autosize.min.js'></script>
+	<script type="text/javascript" src="js/spin.js" ></script>
+	<title>writing2me</title>
+	</head>
+
+	<body>
+	
+	<!--预加载Loading start-->
+	<div id="waitingBar">
+	<div id="waitProcess"></div>
+	<script type="text/javascript" src="js/spin-set.js" ></script>
+	<div id="waitFont">Loading <audio  id="myMusic" loop>
+	请使用GOOGLE浏览器，其他都不行
+	</audio></div>
+	</div>
+	 <!--预加载Loading end-->
+	 
+	 
+	 	<!--Ready start-->
+	<div id="readyPage">
+	<div>『 使用说明 』<br><br>一、一定要点最下面的开始写作，才可以进行创作，不然记录不了时间。<br>二、暂时不提供选歌，只有这一首音乐，刚才加载的过程就是先把音乐读取完毕。<br>三、写完后，点击完成，即可生成观看链接，点击进行观看；也可以再研究研究这个页面。<br><br><a href="#" id="okTogo">明白了，进入写作页面</a></div>
+	</div>
+	 <!--Ready end-->
+	 
+	 
+	 
+	 
+	 
+	 <div class="center">
+	  <input id=title value="辟邪剑谱" class="center" readonly><Br><Br>
+	  <input id=author value="林平之" class="center" readonly><Br><Br>
+	 <textarea id=myContent rows=4  oninput="wordCheck()" textIndent=2em></textarea><br>
+	</div>
+	<br><br>
+	
+<center>计时器： <span id="timeTable">0</span><br>
+ <input id=startBtn type=button value=开始写作 onclick="start()" style="background:lightgreen">
+	 <input type=button value=完成写作 onclick="submit()" style="background:pink">
+	 <div id="watchLink"></div>
+	 </center>
+	 
+
+<script src='js/write.js'></script>
+<script>
+$(function(){ 
+audio.src = "06.MP3";
+audio.addEventListener("canplaythrough", readyToWrite);
+autosize(document.querySelectorAll('textarea'));
+ });
+ 
+ $("#okTogo").bind("click",function(){
+  $("#readyPage").fadeOut();
+});
+ 
+ </script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+	#waitingBar{
+	width:100%;
+	height:100%;
+	background:#000;
+	position:fixed;
+	z-index:999;
+	}
+	
+	#waitFont{
+	text-align:center;
+	font-size:150%;
+	margin: 0 auto;
+	margin-top:50px;
+	width:100px;
+	color:#ccc;
+	
+	font-family:"Courier New","Verdana","Terminal";
+	}
+	#waitProcess{
+	text-align:center;
+	margin: 0 auto;
+	width:100px;
+	height:50%;
+	}
