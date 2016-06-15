@@ -55,10 +55,12 @@ audio.addEventListener("canplaythrough", readyToWrite);
 autosize(document.querySelectorAll('textarea'));
  });
  
- $("#okTogo").bind("click",function(){
+ if(!cookieCheck()){
+ $("#readyPage").fadeIn(1000)
+  $("#okTogo").bind("click",function(){
   $("#readyPage").fadeOut();
 });
- 
+ }
  </script>
 	</body>
 </html>
