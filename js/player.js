@@ -118,9 +118,9 @@
 	var str=time+""
 	//$("#title").text(str.substring(0,str.indexOf(".") + 2))
 	
-	if(str.substring(0,str.indexOf(".") + 2)%5==0){
-		
-		$("#backGround").fadeOut(2000,function () { $("#backGround").css("background-Image","url(img/1.jpg)"); });
+	if(str.substring(0,str.indexOf(".") + 2)%10==0){
+		var randomBgIndex = Math.round( Math.random() * 33 );
+		$("#backGround").fadeOut(2000,function () { $("#backGround").css("background-Image","url("+bodyBgs[randomBgIndex]+")"); });
 		$("#backGround").fadeIn(2000);
 		
 		}
