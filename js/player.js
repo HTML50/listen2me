@@ -54,7 +54,7 @@
 			}
 		else{
 		clearInterval(myClock)
-		$("#wordsTable").append('<br><a href="write.html">我也写一个试试</a>')
+		$("#wordsTable").append('<br><centeR><a href="write.html">我也写一个试试</a></centeR>')
 		}
 	}
 	

@@ -39,6 +39,10 @@
 	z-index:2;
 	}
 	
+	#wordsTable a {
+	font-size: medium;
+	color: rgb(162, 162, 162);
+	
 
 	#backGround {
 	width:100%;
