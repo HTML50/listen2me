@@ -9,6 +9,8 @@ var str="0";
 var hasStarted=false;
 var timeTable  = new Array;
 
+
+
 var time=0;
 var myClock;
 
@@ -35,23 +37,23 @@ clearInterval(myClock)
 
 function submit(){
 audio.pause();
-var content = document.getElementById("myContent");
-var str=content.value.replace(/\n/g, '←')
-//content.value=str+"\n\r"+timeTable
+console.log(str)
+var timeArray = [$("#myContent").val().length,str.substring(0,str.indexOf(".") + 2)]
+timeTable.push(timeArray)
 
+var content = document.getElementById("myContent");
+var str1=content.value.replace(/\n/g, '←')
+//content.value=str+"\n\r"+timeTable
 clearInterval(myClock)
 $("#startBtn").remove()
-$("#watchLink").append('<a href="index.html?content='+str+'&timetable='+timeTable+'">前往参观</a>')
+$("#watchLink").append('<a href="index.html?content='+str1+'&timetable='+timeTable+'">前往参观</a>')
 }
-
 
 function timer(){
 time=time+0.1
 str=time+""
 $("#timeTable").text(str.substring(0,str.indexOf(".") + 2))
 }
-
-
 
 function wordCheck(){
 var cursortPosition=$("#myContent").get(0).selectionStart;
@@ -77,8 +79,7 @@ console.log("当前输入： "+nowInput,"上一个字："+previousWord," 字数�
 			else if(!re.test(pPreviousWord)){
 				if(nowCount+1==theBiggest){
 				console.log("输入了一个中文")
-				var timeArray = [nowCount,str.substring(0,str.indexOf(".") + 2)]
-				timeTable.push(timeArray)
+				putDataIntoArray();
 				}
 				else{
 				console.log("删除中文前面的符号或英文",previousWord)
@@ -96,8 +97,7 @@ console.log("当前输入： "+nowInput,"上一个字："+previousWord," 字数�
 	else if(nowCount-previousCount<-1){
 		if (re.test(nowInput)) {
 			console.log("连拼输入")
-			var timeArray = [nowCount,str.substring(0,str.indexOf(".") + 2)]
-			timeTable.push(timeArray)
+			putDataIntoArray();
 			}
 	}
 	else{
@@ -117,8 +117,26 @@ console.log("当前输入： "+nowInput,"上一个字："+previousWord," 字数�
 	previousWord=nowInput;
 	
 }
+function putDataIntoArray(){
+	var timeArray = [nowCount,str.substring(0,str.indexOf(".") + 2)]
+	timeTable.push(timeArray)
+}
 
 function readyToWrite(){
 	 $("#waitingBar").fadeOut(1100)
 	 audio.removeEventListener("canplaythrough", readyToWrite)
+	}
+	
+	function cookieCheck(){
+		var strCookie=document.cookie; 
+		if(strCookie!=""){
+		return true;
+		}
+		else{
+		var date=new Date(); 
+		var expiresDays=100; 
+		date.setTime(date.getTime()+expiresDays*24*3600*1000); 	
+		document.cookie="wc"; 
+		return false;
+		}
 	}

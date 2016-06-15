@@ -11,6 +11,7 @@
 	background:#eff;
 	position:fixed;
 	z-index:888;
+	display:none;
 	}
 	
 	#readyPage div{
