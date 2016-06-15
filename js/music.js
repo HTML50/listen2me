@@ -1,0 +1,1 @@
+var musicSrc = "http://m2.music.126.net/xrqfiXSdU5RQZLFqwTwZNg==/6030821278367430.mp3";

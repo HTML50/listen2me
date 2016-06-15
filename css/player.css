@@ -1,16 +1,8 @@
-	::-webkit-scrollbar{width:5px;}
-	::-webkit-scrollbar-track{background-color:#999;}
-	::-webkit-scrollbar-thumb{background-color:#fff;}
-	::-webkit-scrollbar-thumb:hover {background-color:#000}
-	::-webkit-scrollbar-thumb:active {background-color:#fff}
-		
-
 	*{
 	margin:0;
 	padding:0;
 	}
-	
-	
+		
 	#title{
 	font-size:150%;
 	font-weight:bold;
@@ -42,23 +34,14 @@
 	#wordsTable a {
 	font-size: medium;
 	color: rgb(162, 162, 162);
-	
+	}
 
 	#backGround {
-	width:100%;
+	width: 100%;
 	height:100%;
 	top:0;
 	position:fixed;
-	background: url("../img/bg.jpg") no-repeat fixed top;	 
+	background: url("../img/1.jpg") no-repeat fixed top;	 
 	z-index:1;
 	}
 	
-	pre { 
-	z-index:3;
-	background:rgba(255, 255, 255, 0.8);
-	/*css-3*/ 
-	white-space: -moz-pre-wrap; /*Mozilla,since1999*/ 
-	white-space: -pre-wrap; /*Opera4-6*/ 
-	white-space: -o-pre-wrap; /*Opera7*/ 
-	word-wrap: break-word; /*InternetExplorer5.5+*/ 
-	} 
