@@ -52,7 +52,6 @@ $("#watchLink").append('<a href="index.html?content='+str1+'&timetable='+timeTab
 function timer(){
 time=time+0.1
 str=time+""
-$("#timeTable").text(str.substring(0,str.indexOf(".") + 2))
 }
 
 function wordCheck(){
@@ -79,7 +78,8 @@ console.log("当前输入： "+nowInput,"上一个字："+previousWord," 字数�
 			else if(!re.test(pPreviousWord)){
 				if(nowCount+1==theBiggest){
 				console.log("输入了一个中文")
-				putDataIntoArray();
+				var timeArray = [nowCount,str.substring(0,str.indexOf(".") + 2)]
+				timeTable.push(timeArray)
 				}
 				else{
 				console.log("删除中文前面的符号或英文",previousWord)
@@ -97,7 +97,8 @@ console.log("当前输入： "+nowInput,"上一个字："+previousWord," 字数�
 	else if(nowCount-previousCount<-1){
 		if (re.test(nowInput)) {
 			console.log("连拼输入")
-			putDataIntoArray();
+			var timeArray = [nowCount,str.substring(0,str.indexOf(".") + 2)]
+			timeTable.push(timeArray)
 			}
 	}
 	else{
@@ -117,10 +118,7 @@ console.log("当前输入： "+nowInput,"上一个字："+previousWord," 字数�
 	previousWord=nowInput;
 	
 }
-function putDataIntoArray(){
-	var timeArray = [nowCount,str.substring(0,str.indexOf(".") + 2)]
-	timeTable.push(timeArray)
-}
+
 
 function readyToWrite(){
 	 $("#waitingBar").fadeOut(1100)

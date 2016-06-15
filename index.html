@@ -7,7 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="css/spin.css" />
 	<script type="text/javascript" src="js/jquery.min.js" ></script>
 	<script type="text/javascript" src="js/spin.js" ></script>
-
+	<script src='js/music.js'></script>
+	<script src='js/bg.js'></script>
+	<title>listen2me</title>
 	</head>
 	<body>
 	
@@ -33,6 +35,7 @@
 
 <div id="backGround">
 </div>
+
 <script>
 
 	var sentence = new Array()
@@ -46,11 +49,6 @@
 	if(contentGet==null){
 	sentence[0] = "测试一次，最后测试一次。看与音乐同步不同步。我觉的应该是同步的，因为我很厉害的！←再来测试一下回车换行，也是没问题的应该，现在就来打歌词。←开始。你是冉冉升起，在分裂的天空足迹，在生命中美丽的一天。啦啦啦，啦。太阳的光辉，金色的月亮，生命中，最美丽的一天。。。"
 	var timeTable = [2,1.7,4,2.7,5,3.1,7,4.0,9,4.6,11,5.2,12,5.9,13,6.6,14,7.3,16,8.5,18,9.3,21,11.7,22,11.9,24,12.9,25,13.4,27,14.5,28,14.9,30,15.7,32,16.6,34,17.4,38,19.3,39,19.6,40,20.3,43,24.5,45,25.3,47,27.3,49,28.5,51,29.5,52,30.0,54,31.3,57,32.5,58,32.8,60,33.7,60,35.4,62,35.7,61,37.5,63,38.6,65,39.6,68,41.2,69,41.5,72,44.2,73,44.9,75,46.2,79,48.2,80,48.4,81,50.0,83,51.3,84,51.6,86,53.3,88,54.7,89,55.0,90,57.3,92,59.4,93,59.9,95,61.4,96,61.7,98,62.6,99,63.4,101,64.6,102,65.1,103,65.5,104,67.2,105,67.7,107,70.4,108,70.7,110,71.8,111,72.1,113,74.5,114,74.7,116,76.4,117,77.0,119,78.1,120,79.0,121,79.7,122,81.0,124,82.3,125,82.8,127,84.2,128,84.7,129,86.4,130,86.6]
-	for(var i=0;i<timeTable.length;i++){
-	var thisG = timeTable[i]
-	console.log(thisG)
-	}
-	console.log(sentence[0],timeTable)
 	
 	}
 	else{
@@ -63,10 +61,7 @@
 	
 	for(var i=0;i<time.length;i++){
 	var thisG = parseInt(time[i])
-	//var thisG=time[i]
-	console.log(thisG)
 	timeTable.push(thisG)
-
 	}
 	
 	console.log(sentence[0],timeTable)
@@ -81,7 +76,7 @@ function GetQueryString(name)
 }
 
 	$(function(){ 
-	 audio.src = "http://m2.music.126.net/xrqfiXSdU5RQZLFqwTwZNg==/6030821278367430.mp3";
+	 audio.src = musicSrc
 	 audio.addEventListener("canplaythrough", readyToGo);
     });
 	

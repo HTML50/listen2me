@@ -68,7 +68,7 @@
 		{
 		$("#wordsTable").find('span:eq(' + start + ')').fadeIn(1000);  
 		
-		console.log(start)
+		
 		wordHeight=$("#wordsTable").find('span:eq(' + start + ')').offset().top
 		if(wordHeight>nowHeight){
 		
@@ -85,7 +85,7 @@
 				var needScroll= nowHeight-halfWindowHeight;
 				$('html,body').animate({scrollTop: needScroll}, 1000);
 				//滚动的高度是，行的高度 减去 屏幕一半，即向下滚动了约一行的高度
-				console.log("滚到了:"+needScroll)
+				//console.log("滚到了:"+needScroll)
 				}
 		
 		}
@@ -118,9 +118,9 @@
 	var str=time+""
 	//$("#title").text(str.substring(0,str.indexOf(".") + 2))
 	
-	if(str.substring(0,str.indexOf(".") + 2)%5==0){
-		
-		$("#backGround").fadeOut(2000,function () { $("#backGround").css("background-Image","url(img/1.jpg)"); });
+	if(str.substring(0,str.indexOf(".") + 2)%10==0){
+		var randomBgIndex = Math.round( Math.random() * 33 );
+		$("#backGround").fadeOut(2000,function () { $("#backGround").css("background-Image","url("+bodyBgs[randomBgIndex]+")"); });
 		$("#backGround").fadeIn(2000);
 		
 		}
@@ -128,7 +128,9 @@
 	
 	function readyToGo(){
 	$('body,html').animate({'scrollTop':0},0)
-	$("#wordsTable").css('height',tableLenght/27*64+halfWindowHeight+enterHeight)
+	//$("#wordsTable").css('height',tableLenght/27*64+halfWindowHeight+enterHeight)
+	//上面的页面宽度计算只针对于PC, 显示器基本上每行28个字左右。对于移动端，不适用
+	$("#wordsTable").css('height','10000px')
 	 $("#waitingBar").fadeOut(1100)
 	 window.setTimeout(function(){play();},1000);
 	 

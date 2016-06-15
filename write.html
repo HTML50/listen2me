@@ -2,11 +2,13 @@
 <html>
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="css/write.css" />
 	<link rel="stylesheet" type="text/css" href="css/spin.css" />
 	<script type="text/javascript" src="js/jquery.min.js" ></script>
 	<script src='js/autosize.min.js'></script>
 	<script type="text/javascript" src="js/spin.js" ></script>
+	<script src='js/music.js'></script>
 	<title>writing2me</title>
 	</head>
 
@@ -40,7 +42,7 @@
 	</div>
 	<br><br>
 	
-<center>计时器： <span id="timeTable">0</span><br>
+<center><br>
  <input id=startBtn type=button value=开始写作 onclick="start()" style="background:lightgreen">
 	 <input type=button value=完成写作 onclick="submit()" style="background:pink">
 	 <div id="watchLink"></div>
@@ -50,7 +52,7 @@
 <script src='js/write.js'></script>
 <script>
 $(function(){ 
-audio.src = "http://m2.music.126.net/xrqfiXSdU5RQZLFqwTwZNg==/6030821278367430.mp3";
+audio.src = musicSrc
 audio.addEventListener("canplaythrough", readyToWrite);
 autosize(document.querySelectorAll('textarea'));
  });
