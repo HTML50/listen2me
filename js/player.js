@@ -17,7 +17,6 @@
 	}
 	}
 	
-	
 
 	//生成数组queue，包含了字句与时间的对应顺序。
 	//参数：开始文字，结束文字，播放速度
@@ -53,7 +52,7 @@
 			}	
 			}
 		else{
-		clearInterval(myClock)
+		//clearInterval(myClock)
 		$("#wordsTable").append('<br><centeR><a href="write.html">我也写一个试试</a></centeR>')
 		}
 	}
@@ -118,10 +117,11 @@
 	var str=time+""
 	//$("#title").text(str.substring(0,str.indexOf(".") + 2))
 	
-	if(str.substring(0,str.indexOf(".") + 2)%10==0){
+	if(str.substring(0,str.indexOf(".") + 2)%15==0){
 		var randomBgIndex = Math.round( Math.random() * 33 );
-		$("#backGround").fadeOut(2000,function () { $("#backGround").css("background-Image","url("+bodyBgs[randomBgIndex]+")"); });
-		$("#backGround").fadeIn(2000);
+		$("#backGround").fadeOut(1500,function (){ $("#backGround").css("background-Image","url("+bodyBgs[randomBgIndex]+")");$("#backGround").css("background-size","100%");});
+		$("#backGround").fadeIn(1500,function (){$("#backGround").animate({"background-size":"112%"},12000)});
+		
 		
 		}
 	}
@@ -135,6 +135,11 @@
 	 window.setTimeout(function(){play();},1000);
 	 
 	 audio. removeEventListener("canplaythrough", readyToGo)
+	 
+	 $(window).bind("wheel",function(event){
+    event.preventDefault();
+    return false;
+	});
 	}
 	
 	
