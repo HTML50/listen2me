@@ -115,12 +115,24 @@
 	function timer(){
 	time=time+0.1
 	var str=time+""
-	//$("#title").text(str.substring(0,str.indexOf(".") + 2))
+	$("#title").text(str.substring(0,str.indexOf(".") + 2))
 	
 	if(str.substring(0,str.indexOf(".") + 2)%15==0){
 		var randomBgIndex = Math.round( Math.random() * 33 );
-		$("#backGround").fadeOut(1500,function (){ $("#backGround").css("background-Image","url("+bodyBgs[randomBgIndex]+")");$("#backGround").css("background-size","100%");});
-		$("#backGround").fadeIn(1500,function (){$("#backGround").animate({"background-size":"112%"},12000)});
+		//$("#backGround").fadeOut(1500,function (){("#backGround").css("background-Image","url("+bodyBgs[randomBgIndex]+")");$("#backGround").css("transform","scale(1)")});
+		//$("#backGround").fadeIn(1500,function (){$("#backGround").css("transform","scale(1.1)")});
+		//$("#backGround").animate({'opacity':'0'	},1000,function (){$("#backGround").css("background-Image","url("+bodyBgs[randomBgIndex]+")");$("#backGround").css("transform","scale(1)")});
+		//$("#backGround").animate({'opacity':'1'	},1000,function (){$("#backGround").css("transform","scale(1.1)")});
+		
+		$("#backGround").animate({'opacity':'0'},1500);
+		setTimeout(function(){
+		$("#backGround").animate({'opacity':'1'},1500);
+		$("#backGround").css({"background-Image":"url("+bodyBgs[randomBgIndex]+")","transition":"none","transform":"scale(1)"})
+		},1300)
+		setTimeout(function(){
+		$("#backGround").css("transition","transform 15s linear")
+		$("#backGround").css("transform","scale(1.2)")
+		},1500)
 		
 		
 		}
