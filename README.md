@@ -8,6 +8,10 @@ My intention is to let readers understand and feel writer's emotion when he/she 
 
 The player has two part, one is player and the other is editor. You can wrtie your own thought with editor,  when you finish writing, you can watch it in player.
 
+
+
+打字机效果的文章播放器。与写作者的录入速度同步。
+
 # demo
 
 here is a demo page, feel it.
