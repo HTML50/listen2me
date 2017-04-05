@@ -103,7 +103,8 @@
 	
 	
 	//我太笨了，弄不好数组，只能用笨办法代替。先播前几个字，也就是0至数组第一个数量。然后调用循环播放。
-	window.setTimeout(function(){playSentence(0,timeTable[0],(timeTable[1]/timeTable[0]*1000));myClock=setInterval("timer()",100);audio.play();},2000);
+	window.setTimeout(function(){playSentence(0,timeTable[0],(timeTable[1]/timeTable[0]*1000));//myClock=setInterval("timer()",100);
+  audio.play();},2000);
 	
 	//此处的速度，为此组总用时。前几个字放完，进行数组循环调用播放。
 	window.setTimeout(function(){queuePlay(0)},timeTable[1]*1000+2000);
@@ -118,7 +119,7 @@
 	$("#title").text(str.substring(0,str.indexOf(".") + 2))
 	
 	if(str.substring(0,str.indexOf(".") + 2)%15==0){
-		var randomBgIndex = Math.round( Math.random() * 33 );
+		var randomBgIndex = Math.round( Math.random() * bodyBgs.length );
 		//$("#backGround").fadeOut(1500,function (){("#backGround").css("background-Image","url("+bodyBgs[randomBgIndex]+")");$("#backGround").css("transform","scale(1)")});
 		//$("#backGround").fadeIn(1500,function (){$("#backGround").css("transform","scale(1.1)")});
 		//$("#backGround").animate({'opacity':'0'	},1000,function (){$("#backGround").css("background-Image","url("+bodyBgs[randomBgIndex]+")");$("#backGround").css("transform","scale(1)")});
