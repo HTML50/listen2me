@@ -47,3 +47,30 @@
 	transition:transform 15s linear;
 	}
 
+    .star-me{
+    border-bottom: 3px #d7d7d7 solid;
+    border-top: 3px #d7d7d7 solid;
+    width: 410px;
+    height: 83px;
+    background: #efefef;
+    font-family: 'Ubuntu',sans-serif; 
+    font-size: 2.2rem;
+    text-shadow: #868686 1px 1px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(45deg) translate(110px,-20px);
+    }
+    .star-me a{
+        color:#3f3f3f;
+        text-decoration: none;
+    }
+    .star-me a:hover{
+        text-decoration: underline;
+    }
+
+    
+    .block{
+        position: fixed;
+        right: 0;top: 0;
+    }
